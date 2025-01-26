@@ -125,3 +125,49 @@ button:hover {
     background-position: 0% 50%;
   }
 }
+
+/* Custom Animations */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in 1s ease-out forwards;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation Styles */
+.nav-scrolled {
+  @apply bg-black/80 backdrop-blur-lg shadow-lg;
+}
+
+/* Feature Cards */
+.feature-card {
+  transition: transform 0.3s ease-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Solution Cards */
+.solution-card {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
